@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>your.group.id</groupId>
+    <artifactId>your-artifact-id</artifactId>
+    <version>your-version</version>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>com.heroku.sdk</groupId>
+      <artifactId>heroku-maven-plugin</artifactId>
+      <version>3.0.4</version>
+      <configuration>
+        <appName>${heroku.appName}</appName>
+        <processTypes>
+          <web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.example.Main</web>
+        </processTypes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+</project>
